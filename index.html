@@ -1,128 +1,650 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HUNANIMA - Machines Agricoles Simples</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fefefe;
-      color: #333;
-    }
-    header {
-      background-color: #2e7d32; /* Vert foncé */
-      color: #fdd835; /* Jaune vif */
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
-    }
-    nav {
-      background-color: #fdd835;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #2e7d32;
-    }
-    .hero {
-      background: url('https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg') no-repeat center center/cover;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
-      font-size: 2em;
-    }
-    section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    section h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .gallery img {
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    footer {
-      background-color: #2e7d32;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    footer p {
-      margin: 5px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HURMAT MTI LLC | Advanced Medical Technology & Healthcare Systems</title>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <style>
+        /* Medical & Technological Color Palette */
+        :root {
+            --bg-main: #f4f8fa;
+            --bg-card: #ffffff;
+            --navy-dark: #0a2540;
+            --teal-primary: #008080;
+            --cyan-accent: #00a8cc;
+            --soft-mint: #e8f6f5;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #dbeafe;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-banner {
+            background: var(--navy-dark);
+            color: #d1d5db;
+            font-size: 0.825rem;
+            letter-spacing: 0.04em;
+            padding: 0.6rem 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-banner span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Header Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1.2rem 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: var(--navy-dark);
+            text-transform: uppercase;
+        }
+
+        .brand i {
+            color: var(--teal-primary);
+        }
+
+        nav {
+            display: flex;
+            gap: 2.2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--teal-primary);
+        }
+
+        .btn-teal {
+            background: var(--teal-primary);
+            color: #ffffff;
+            padding: 0.75rem 1.6rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 128, 128, 0.2);
+        }
+
+        .btn-teal:hover {
+            background: #006666;
+            transform: translateY(-2px);
+        }
+
+        .wrapper {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        #about {
+            padding: 5.5rem 0;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--soft-mint);
+            color: var(--teal-primary);
+            border: 1px solid rgba(0, 128, 128, 0.2);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.25rem;
+            line-height: 1.15;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 span {
+            color: var(--teal-primary);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.25rem;
+        }
+
+        .hero-img-box {
+            position: relative;
+        }
+
+        .hero-img-box img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(10, 37, 64, 0.1);
+        }
+
+        .hero-card-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 1.25rem 1.75rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-card-badge i {
+            color: var(--teal-primary);
+            background: var(--soft-mint);
+            padding: 0.75rem;
+            border-radius: 8px;
+        }
+
+        /* Section Title Header */
+        .section-title {
+            text-align: center;
+            max-width: 650px;
+            margin: 6rem auto 3.5rem auto;
+        }
+
+        .section-title span {
+            color: var(--teal-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.35rem;
+            color: var(--navy-dark);
+            font-weight: 800;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--teal-primary);
+            box-shadow: 0 15px 35px rgba(0, 128, 128, 0.12);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .service-card-body {
+            padding: 2rem;
+        }
+
+        .service-card-body h3 {
+            font-size: 1.25rem;
+            color: var(--navy-dark);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .service-card-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Technology Feature Showcase */
+        .feature-showcase {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 4rem;
+            margin: 6rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .feature-showcase img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .feature-showcase-text h3 {
+            font-size: 2.1rem;
+            color: var(--navy-dark);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .feature-showcase-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            color: var(--navy-dark);
+        }
+
+        .feature-list li i {
+            color: var(--teal-primary);
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .contact-info h2 {
+            font-size: 2.2rem;
+            color: var(--navy-dark);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-row i {
+            color: var(--teal-primary);
+            background: var(--soft-mint);
+            padding: 0.85rem;
+            border-radius: 10px;
+        }
+
+        .info-row span {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .info-row strong {
+            font-size: 1rem;
+            color: var(--navy-dark);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            background: var(--bg-main);
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 1rem;
+            color: var(--text-dark);
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--teal-primary);
+            background: #ffffff;
+        }
+
+        .btn-submit {
+            background: var(--navy-dark);
+            color: #ffffff;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: var(--teal-primary);
+        }
+
+        /* Modal styling */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 37, 64, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            border-radius: 16px;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 3rem;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        .modal-content h3 {
+            color: var(--navy-dark);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--navy-dark);
+        }
+
+        footer {
+            background: var(--navy-dark);
+            color: #94a3b8;
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.875rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        footer a {
+            color: var(--cyan-accent);
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            #about, .feature-showcase, .contact-box {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>HUNANIMA</h1>
-    <p>Machines Agricoles Simples et Fiables</p>
-  </header>
-
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="hero">
-    <p>Votre partenaire pour des machines agricoles durables</p>
-  </div>
-
-  <section id="about">
-    <h2>À propos de nous</h2>
-    <p>
-      Chez <strong>HUNANIMA</strong>, nous nous spécialisons dans la fabrication et la distribution de 
-      <strong>machines agricoles simples</strong> pour faciliter le travail des agriculteurs. 
-      Nos solutions combinent <em>durabilité, efficacité et innovation</em> afin de répondre aux besoins de toutes les exploitations.
-    </p>
-  </section>
-
-  <section id="gallery">
-    <h2>Nos Machines</h2>
-    <div class="gallery">
-      <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse">
-      <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Machine agricole">
-      <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Équipement agricole simple">
+    <div class="top-banner">
+        <span><i data-lucide="shield-check" size="15"></i> HURMAT MTI LLC — Advanced Healthcare & Clinical Technologies</span>
+        <span>Gainesville, GA Facility[cite: 14]</span>
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contactez-nous</h2>
-    <p><strong>Email :</strong> admin@tyusex.shop</p>
-    <p><strong>Téléphone :</strong> +33 7 38 50 26 36</p>
-    <p><strong>Adresse :</strong> Avenue Baratier, Montmorency, 95160, France</p>
-  </section>
+    <header>
+        <div class="brand">
+            <i data-lucide="activity"></i> Hurmat MTI
+        </div>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#solutions">Solutions</a>
+            <a href="#technology">Technology</a>
+            <a href="#contact" class="btn-teal">Contact Support</a>
+        </nav>
+    </header>
 
-  <footer>
-    <p>&copy; 2025 HUNANIMA - Tous droits réservés.</p>
-  </footer>
+    <div class="wrapper">
+        <!-- Hero Section -->
+        <section id="about">
+            <div class="hero-content">
+                <span class="hero-tag">Precision Healthcare Innovations</span>
+                <h1>Empowering Modern <span>Clinical Care & Technologies</span></h1>
+                <p>Hurmat MTI LLC delivers high-performance medical systems, diagnostic instrumentation, and specialized hospital equipment solutions engineered for safety, compliance, and clinical performance[cite: 14].</p>
+                <a href="#contact" class="btn-teal" style="padding: 1rem 2rem; display: inline-block;">Request Solution Consultation</a>
+            </div>
 
+            <div class="hero-img-box">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="Modern medical research laboratory and clinical technology setup">
+                <div class="hero-card-badge">
+                    <i data-lucide="heart-pulse" size="26"></i>
+                    <div>
+                        <strong style="color: var(--navy-dark); display: block;">Clinical Excellence</strong>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;">Certified Healthcare Systems</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="solutions">
+            <div class="section-title">
+                <span>Capabilities</span>
+                <h2>Comprehensive Healthcare & Tech Solutions</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="Advanced ICU monitoring system and medical equipment">
+                    <div class="service-card-body">
+                        <h3>Critical Care & ICU Systems</h3>
+                        <p>Providing essential critical care technologies, patient monitoring units, and life-support emergency setups for healthcare institutions.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Modern diagnostic ultrasound and imaging equipment">
+                    <div class="service-card-body">
+                        <h3>Diagnostic & Imaging Solutions</h3>
+                        <p>Delivering high-precision diagnostic systems, surgical instrumentation, and clinical testing tools for modern medical practice.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Clean medical facility hall and specialized equipment">
+                    <div class="service-card-body">
+                        <h3>Hospital Furniture & Infrastructure</h3>
+                        <p>Ergonomic, heavy-duty clinical furniture, specialized surgical tables, and sterilization units built for long-term reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Showcase -->
+        <section id="technology" class="feature-showcase">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Engineer configuring advanced medical technology apparatus">
+            
+            <div class="feature-showcase-text">
+                <h3>Reliable Quality & Engineering Rigor</h3>
+                <p>We work in close alignment with global health standards to ensure healthcare providers receive dependable, cutting-edge medical technologies[cite: 14].</p>
+
+                <ul class="feature-list">
+                    <li><i data-lucide="check-circle-2"></i> ISO Quality Compliant Equipment Solutions</li>
+                    <li><i data-lucide="check-circle-2"></i> Specialized Clinical Installation & Support</li>
+                    <li><i data-lucide="check-circle-2"></i> Custom Infrastructure Procurement for Medical Facilities</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-box">
+            <div class="contact-info">
+                <h2>Connect With Us</h2>
+                <p>Reach out to our Gainesville team for equipment specifications, clinical partnerships, or procurement quotes[cite: 14].</p>
+
+                <div class="info-row">
+                    <i data-lucide="mail"></i>
+                    <div>
+                        <span>Email Contact</span>
+                        <strong>contact@hurmatmti.org</strong>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <i data-lucide="phone"></i>
+                    <div>
+                        <span>Phone Line</span>
+                        <strong>+1 980 455 4324</strong>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <span>Office Address</span>
+                        <strong>3101 New Holland Way NE, Gainesville, GA 30501 United States[cite: 14]</strong>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="event.preventDefault();">
+                <input type="text" placeholder="Full Name / Organization" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <textarea rows="4" placeholder="How can Hurmat MTI assist your facility?" required></textarea>
+                <button type="submit" class="btn-submit">Submit Inquiry</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="toggleModal()"><i data-lucide="x" size="24"></i></button>
+            <h3>Privacy Policy</h3>
+            <p>Last updated: October 2026</p>
+            <br>
+            <h4>1. Information Collection</h4>
+            <p>HURMAT MTI LLC collects personal details submitted via contact forms solely to handle equipment requests, technical inquiries, and corporate consultations[cite: 14].</p>
+            <br>
+            <h4>2. Data Security</h4>
+            <p>We maintain strict administrative safeguards to protect all partner, organization, and personal information against unauthorized disclosure.</p>
+            <br>
+            <h4>3. Contact Us</h4>
+            <p>For questions regarding our privacy standard, contact us at contact@hurmatmti.org.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="wrapper">
+            <p>&copy; 2026 HURMAT MTI LLC. All rights reserved. Gainesville, Georgia[cite: 14].</p>
+            <p style="margin-top: 0.5rem;"><a onclick="toggleModal()">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleModal() {
+            document.getElementById('privacy-modal').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
